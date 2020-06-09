@@ -126,10 +126,10 @@ O alinhamento visualizado no AliView fica dessa forma:
 
 ![Alinhamento-mafft-Aliview](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig2.png)
 
+Como se pode ver, existem muitas colunas com gaps e blocos com alinhamento pobre. Para melhorar o alinhamento nessa região eu vou utilizar o CIAlign para remover algumas das colunas com pouca quantidade de resíduos, as quais não apresentam nenhuma informação filogenética. 
 
 
-
-editando o alinhamento com o CIAlign:
+editando o alinhamento com o trimal:
 
 ```bash
 #!/bin/bash
@@ -144,3 +144,9 @@ module load softwares/python/3.6.1-gnu-4.8
 ~/.local/bin/CIAlign --infile sequence_MAFFT.fasta --outfile_stem sequence_MAFFT_TRIM --remove_insertions --crop_ends
 
 ```
+
+![Alinhamento-mafft-CIAlign-Aliview]()
+
+## Inferinfo a filogenia
+
+Para iferir a filogenia dos 
