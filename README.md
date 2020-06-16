@@ -158,6 +158,7 @@ module load softwares/python/3.6.1-gnu-4.8
 CIAlign --infile sequence_MAFFT_TRIMAL.fasta --outfile_stem sequence_MAFFT_TRIMAL_CAIlign --remove_short --remove_min_length 201 --plot_coverage_input --plot_coverage_output
 
 ```
+O alinhamento final, no arquivo **sequence_MAFFT_TRIMAL_CAIlign_cleaned.fasta**, o alinhamento ficará assim:
 
 ![Alinhamento-mafft-CIAlign-Aliview](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig3.png)
 
