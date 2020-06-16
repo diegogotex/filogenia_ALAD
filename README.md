@@ -133,6 +133,20 @@ editando o alinhamento com o trimal:
 
 ```bash
 #!/bin/bash
+#SBATCH --job-name=TRIMAL
+#SBATCH --output=TRIMAL_ALAD.out
+#SBATCH --error=TRIMAL_ALAD.err
+#SBATCH --mem=64000
+#SBATCH --time=10-0:0
+
+~/Programas/trimal-trimAl/source/trimal -in sequence_MAFFT.fasta -out sequence_MAFFT_TRIMAL.fasta -gappyout
+```
+
+
+Removendo sequências curtas do alinhamento. para isso irei remover aquelas que apresentam menos de 75% no número total de bases em relação ao alinhamento completo. O alinhamento completo apresenta 268 posições, então removerei aquelas que possuem menos de 201 bases.
+
+```bash
+#!/bin/bash
 #SBATCH --job-name=CIAlign
 #SBATCH --output=CIAlign_ALAD.out
 #SBATCH --error=CIAlign_ALAD.err
@@ -141,7 +155,7 @@ editando o alinhamento com o trimal:
 
 module load softwares/python/3.6.1-gnu-4.8
 
-~/.local/bin/CIAlign --infile sequence_MAFFT.fasta --outfile_stem sequence_MAFFT_TRIM --remove_insertions --crop_ends
+CIAlign --infile sequence_MAFFT_TRIMAL.fasta --outfile_stem sequence_MAFFT_TRIMAL_CAIlign --remove_short --remove_min_length 201 --plot_coverage_input --plot_coverage_output
 
 ```
 
