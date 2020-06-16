@@ -159,7 +159,7 @@ CIAlign --infile sequence_MAFFT_TRIMAL.fasta --outfile_stem sequence_MAFFT_TRIMA
 
 ```
 
-![Alinhamento-mafft-CIAlign-Aliview]()
+![Alinhamento-mafft-CIAlign-Aliview](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig3.png)
 
 ## Inferinfo a filogenia
 
