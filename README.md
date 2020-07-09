@@ -162,6 +162,84 @@ O alinhamento final, no arquivo **sequence_MAFFT_TRIMAL_CAIlign_cleaned.fasta**,
 
 ![Alinhamento-mafft-CIAlign-Aliview](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig3.png)
 
-## Inferinfo a filogenia
+
+## Idnetificando os clusters
+
+Nessa etapa, irei identificar os clusters de proteínas de acordo com 3 categorias de resíduos de aminoácidos.
+1. resíduos do sítio catalítico da proteína;
+2. resíduoes do bolsão de interação com o íon;
+3. resíduos que, além das cisteínas principais, também são importantes para a interação com o íon.
+
+Para essas 3 análises, eu irei comparar a posição dos resíduos da ALAD de Homo sapiens com a mesma proteína no PDB, para ter certeza que estou pegando os aminoácidos na posição correta.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Preparando a anotação
+Pegando as informações de linhagem do taxonomy para utilizar como anotação das amostras na árvore filogenética. O primeiro passo é pegar a informação do taxID que foi obtida junto com as sequências e salvar em um arquivo de uma única coluna. 
+
+```bash
+#instalando os pacotes necessários
+conda install -c bioconda taxonkit
+conda install -c bioconda csvtk
+
+#puxando a linhagem e salvando em um arquivo
+taxonkit lineage -j 2 ALAD_taxids.txt | awk '$2!=""' > ALAD_lineage.txt
+
+#formatando o arquivo de linhagem
+cat lineage.txt \
+    | taxonkit reformat \
+    | csvtk -H -t cut -f 1,3 \
+    | csvtk -H -t sep -f 2 -s ';' -R \
+    | csvtk add-header -t -n taxid,kindom,phylum,class,order,family,genus,species \
+    | csvtk pretty -t
+```
+
+Depois disso, eu utilizo o R para relacionar e gerar algumas informações para a anotação
+
+```R
+library(readr)
+library(RColorBrewer)
+
+header <- read.csv("~/Desktop/MANEL/ALAD_tax/heads.txt", stringsAsFactors = F, header = T, sep = "\t")
+
+tax <- read_table2("Desktop/MANEL/ALAD_tax/ALAD_lineage_reformat.txt")
+
+#jutando os dois dataframes
+merged <- merge(header, tax, by="taxid", all.x = T)
+
+#criando um DF para colocar as cores baseadas no reino
+kingdom <- as.data.frame(matrix(data =NA, nrow=3, ncol=2))
+colnames(kingdom) <- c("kindom","cor")
+kingdom$kingdom <- levels(merged$kindom)
+kingdom$cor <- brewer.pal(3,"Set1")
+
+
+merged <- merge(merged, kingdom, by = "kindom", all.x = T)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+## Inferindo a filogenia
 
 Para iferir a filogenia dos 
