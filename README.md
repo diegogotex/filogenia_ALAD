@@ -175,11 +175,18 @@ Para o sítio catalítico com ligação ao Zn<sup>2+</sup>, irei pegar os resíd
 ![Alinhamento-sitio-catalitico](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig4.png)
 
 
-Para a outras análises, eu comparei a posição dos resíduos da ALAD de Homo sapiens com a mesma proteína no PDB, para ter certeza que estou pegando os aminoácidos na posição correta.
+Para a outras análises, eu comparei a posição dos resíduos da ALAD de Homo sapiens com a mesma proteína no PDB, para ter certeza que estou pegando os aminoácidos na posição correta. Alinhei a sequência do PDB [5HNR](https://www.rcsb.org/structure/5HNR) com a sequencia de ALAD do alinhamento [XP_011516666.1](https://www.ncbi.nlm.nih.gov/protein/XP_011516666.1/).
 
+![Alinhamento-NCBIxPDB](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig5.png)
 
+As sequências apresentavam 100% de identidade (ainda bem), mas a sequência oriunda do NCBI apresentava 9 aminoácido a mais na região N-terminal, desta forma quando eu for procurar pelos resíduos no alinhamento geral das ALADs, devo **somar mais 9** na posição do resíduo para a sequência de humano. Os resíduos são: ASP120, CYS122, CYS124, CYS132, SER168, ASP169, ARG209 e ARG221. 
+Para selecionar os resíduos, eu abro o alinhamento e, com base na sequencia de humano, eu pego as posições corespondentes a da proteína do PDB:
 
+![Alinhamento-NCBIxPDB](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig6.png)
 
+Guardo as posições em uma tabela, pra facilitar a seleção.
+
+![TABELA](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig7.png)
 
 
 
