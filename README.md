@@ -165,12 +165,17 @@ O alinhamento final, no arquivo **sequence_MAFFT_TRIMAL_CAIlign_cleaned.fasta**,
 
 ## Idnetificando os clusters
 
-Nessa etapa, irei identificar os clusters de proteínas de acordo com 3 categorias de resíduos de aminoácidos.
+Nessa etapa, irei identificar os clusters de proteínas de acordo com 2 categorias de resíduos de aminoácidos.
 1. resíduos do sítio catalítico da proteína;
-2. resíduoes do bolsão de interação com o íon;
-3. resíduos que, além das cisteínas principais, também são importantes para a interação com o íon.
+2. resíduos que, além das cisteínas principais, também são importantes para a interação com o íon.
 
-Para essas 3 análises, eu irei comparar a posição dos resíduos da ALAD de Homo sapiens com a mesma proteína no PDB, para ter certeza que estou pegando os aminoácidos na posição correta.
+
+Para o sítio catalítico com ligação ao Zn<sup>2+</sup>, irei pegar os resíduos na posição da assinatura descrita por Jaffe, E. K. (2016), **DXCXCX(Y/F)X3G(H/Q)CG**. Utilizarei o alinhamento inicial para isso, para evitar que algum resíduo importante tenha sido removido durante o processo de limpeza do alinhamento.
+
+![Alinhamento-sitio-catalitico](https://github.com/diegogotex/filogenia_ALAD/blob/master/imagens/Fig4.png)
+
+
+Para a outras análises, eu comparei a posição dos resíduos da ALAD de Homo sapiens com a mesma proteína no PDB, para ter certeza que estou pegando os aminoácidos na posição correta.
 
 
 
