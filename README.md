@@ -169,6 +169,7 @@ Nessa etapa, irei identificar os clusters de proteínas de acordo com 2 categori
 1. resíduos do sítio catalítico da proteína;
 2. resíduos que, além das cisteínas principais, também são importantes para a interação com o íon.
 
+da análise da assinatura, foram mantidas todas as sequências. já para a segunda análise, foram removidas todas as sequências que apresentavam GAPs.
 
 Para o sítio catalítico com ligação ao Zn<sup>2+</sup>, irei pegar os resíduos na posição da assinatura descrita por Jaffe, E. K. (2016), **DXCXCX(Y/F)X3G(H/Q)CG**. Utilizarei o alinhamento inicial para isso, para evitar que algum resíduo importante tenha sido removido durante o processo de limpeza do alinhamento.
 
